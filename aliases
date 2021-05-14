@@ -1,0 +1,3 @@
+alias D='cd $HOME/Downloads && ls'
+alias d='cd $HOME/Documentos && ls'
+alias activate='source $HOME/Documentos/venv/bin/activate'
