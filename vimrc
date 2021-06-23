@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline'
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
+	Plug 'lervag/vimtex'
 call plug#end()
 
 "" BASICS
@@ -60,3 +61,8 @@ nmap <C-p> :Files<CR>
 nmap <C-e> :Buffer<CR>
 let g:fzf_action = {'ctrl-e': 'edit'}
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+
+"" vimtex
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
+let g:vimtex_view_general_options_latexmk = '-reuse-instance'
