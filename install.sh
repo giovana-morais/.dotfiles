@@ -1,6 +1,7 @@
 #!/bin/sh
 
-sudo apt install vim zsh tmux python3-pip ruby-full build-essential zlib1g-dev -y
+sudo apt install vim zsh tmux python3-pip ruby-full build-essential zlib1g-dev \
+ffmpeg -y
 
 chsh -s /bin/zsh
 
