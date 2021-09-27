@@ -11,12 +11,13 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-	Plug 'preservim/nerdtree'
-	Plug 'tpope/vim-commentary'
-	Plug 'vim-airline/vim-airline'
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
 	Plug 'lervag/vimtex'
+	Plug 'preservim/nerdtree'
+	Plug 'tpope/vim-commentary'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vimwiki/vimwiki'
 call plug#end()
 
 "" BASICS
@@ -24,6 +25,9 @@ syntax on
 set number relativenumber
 set textwidth=80
 set encoding=utf-8
+set foldenable
+set foldmethod=manual
+
 " remapping esc
 inoremap jk <Esc>
 
@@ -38,9 +42,6 @@ set sw=4 ts=4 ai
 
 " c files
 autocmd FileType c set sw=8 ts=8 ai
-
-" html files
-autocmd FileType html, markdown set sw=2 ts=2 ai
 
 " treat all .md files as markdown
 autocmd BufNewFile,BufRead *.md set filetype=markdown
@@ -65,4 +66,6 @@ let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 "" vimtex
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
-let g:vimtex_view_general_options_latexmk = '-reuse-instance'
+
+"" vimwiki
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
