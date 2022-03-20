@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo apt install vim zsh tmux python3-pip ruby-full build-essential zlib1g-dev \
+sudo apt install nvim zsh tmux python3-pip ruby-full build-essential zlib1g-dev \
 ffmpeg -y
 
 chsh -s /bin/zsh
@@ -27,6 +27,7 @@ ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/vimrc ~/.vimrc
 ln -s ~/.dotfiles/zshrc ~/.zshrc
+ln -s ~/.dotfiles/nvim_init ~/.config/init.vim
 
 # python, virtualenv and lots of libs
 pip install virtualenv
