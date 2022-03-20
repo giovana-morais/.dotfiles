@@ -1,32 +1,46 @@
+" enable true colors
+if exists('+termguicolors')
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+	set termguicolors
+endif
+
 " changing map to ,
 let mapleader =","
 
-" TODO: split this in different files maybe?
-
 " automatic installation
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+" let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+" if empty(glob(data_dir . '/autoload/plug.vim'))
+"   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+"   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+" endif
 
 call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
+	Plug 'junegunn/goyo.vim'
 	Plug 'lervag/vimtex'
 	Plug 'preservim/nerdtree'
+	Plug 'sonph/onehalf', { 'rtp': 'vim' }
 	Plug 'tpope/vim-commentary'
 	Plug 'vim-airline/vim-airline'
-	Plug 'vimwiki/vimwiki'
+	Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-"" BASICS
+"" basic settings
 syntax on
-set number relativenumber
-set textwidth=80
+set t_Co=256
+colorscheme onehalfdark
+
 set encoding=utf-8
 set foldenable
 set foldmethod=manual
+set noswapfile 			" no swap
+set number relativenumber
+set showcmd				" show me my commands
+set splitright			" new windows always right
+set splitbelow			" new windows always below
+set textwidth=80
 
 " remapping esc
 inoremap jk <Esc>
@@ -36,7 +50,7 @@ autocmd BufWritePre * %s/\s\+$//e
 autocmd BufWritePre * %s/\n\+\%$//e
 autocmd BufWritePre *.[ch] %s/\%$/\r/e
 
-"" FILETYPES
+" FILETYPES
 " default 4 spaces per tab
 set sw=4 ts=4 ai
 
