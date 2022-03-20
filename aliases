@@ -1,4 +1,7 @@
 alias D='cd $HOME/Downloads && ls'
 alias d='cd $HOME/Documentos && ls'
 alias activate='source $HOME/Documentos/venv/bin/activate'
-alias .dot='cd $HOME/.dotfiles && ls'
+alias dotfiles='cd $HOME/.dotfiles && ls'
+alias tese='cd $HOME/Documentos/tese'
+
+alias vim="nvim"
