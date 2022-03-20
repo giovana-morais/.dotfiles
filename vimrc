@@ -48,24 +48,22 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 " format markdown elements
 autocmd FileType markdown set conceallevel=2
 
-"" PLUGINS
+" ============ vim-airline ==============
+let g:airline_theme='onehalfdark'
 
-"" NERDTree
+" ============ NERDTree ==================
 map <leader>n :NERDTreeToggle<CR>
 " close vim if the only window is a nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " show hidden files
 let NERDTreeShowHidden=1
 
-"" fzf
+" ============ fzf ====================
 nmap <C-p> :Files<CR>
 nmap <C-e> :Buffer<CR>
 let g:fzf_action = {'ctrl-e': 'edit'}
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
-"" vimtex
+" ============= vimtex =====================
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
-
-"" vimwiki
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
