@@ -15,6 +15,7 @@ let mapleader =","
 "   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 " endif
 
+" plugins
 call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
@@ -23,12 +24,13 @@ call plug#begin('~/.vim/plugged')
 	Plug 'preservim/nerdtree'
 	Plug 'sonph/onehalf', { 'rtp': 'vim' }
 	Plug 'tpope/vim-commentary'
+	Plug 'tpope/vim-surround'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 "" basic settings
-syntax on
+syntax enable
 set t_Co=256
 colorscheme onehalfdark
 
@@ -37,7 +39,6 @@ set foldenable
 set foldmethod=manual
 set noswapfile 			" no swap
 set number relativenumber
-set showcmd				" show me my commands
 set splitright			" new windows always right
 set splitbelow			" new windows always below
 set textwidth=80
@@ -81,3 +82,8 @@ let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 " ============= vimtex =====================
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
+
+" ================ Goyo ====================
+let g:goyo_width = 90
+" ,g toggles Goyo
+map <leader>g :Goyo \| set linebreak<CR>
