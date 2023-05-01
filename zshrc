@@ -85,7 +85,7 @@ export LANG=pt_BR.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='vi'
 fi
 
 # Compilation flags
@@ -97,6 +97,9 @@ fi
 # For a full list of active aliases, run `alias`.
 source ~/.dotfiles/aliases
 
+# Load my own shell functions
+source ~/.dotfiles/functions
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
@@ -104,6 +107,6 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O 
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
-# Install Ruby Gems to ~/gems
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
+
+# add virtualenv path
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
