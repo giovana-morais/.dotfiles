@@ -2,4 +2,5 @@ alias D='cd $HOME/Downloads && ls'
 alias d='cd $HOME/Documents && ls'
 alias dotfiles='cd $HOME/.dotfiles && ls'
 
-alias tese='cd $HOME/Documents/tese'
+alias tese='cd $HOME/Documents/tese && ls'
+alias phd='cd $HOME/Documents/phd && ls'
