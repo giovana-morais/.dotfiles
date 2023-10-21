@@ -2,7 +2,7 @@
 
 sudo apt update
 
-function install {
+install() {
 	which $1 &> /dev/null
 
 	if [ $? -ne 0 ]; then
@@ -14,12 +14,11 @@ function install {
 }
 
 install build-essential
-install cowsay
 install ffmpeg
 install latexmk
-install nvim
+install neovim
 install python3-pip
-install ruby-full
+# install ruby-full
 install tmux
 install zathura
 install zsh
@@ -55,24 +54,13 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # install plugins from .vimrc using command line
 vim +PlugInstall +qall
 
-# python, virtualenv and lots of libs
-cd ~
-pip install virtualenv
-virtualenv venv
-source venv/bin/activate
-pip install numpy
-pip install matplotlib
-pip install scipy
-pip install librosa
-pip install essentia
-deactivate
+# install onehalfdark theme for gnome terminal
+wget https://raw.githubusercontent.com/sonph/onehalf/master/gnome-terminal/onehalfdark.sh
 
 # ruby, jekyll and etc
-echo '# install Ruby Gems to ~/gems' >> ~/.zshrc
-echo 'export GEM_HOME="$HOME/gems"' >> ~/.zshrc
-echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.zshrc
-source ~/.zshrc
+# echo '# install Ruby Gems to ~/gems' >> ~/.zshrc
+# echo 'export GEM_HOME="$HOME/gems"' >> ~/.zshrc
+# echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.zshrc
+# source ~/.zshrc
 
-sudo gem install jekyll bundler
-
-cowsay -s i guess we are done!
+# sudo gem install jekyll bundler
