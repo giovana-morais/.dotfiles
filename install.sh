@@ -17,6 +17,7 @@ install build-essential
 install ffmpeg
 install latexmk
 install neovim
+install python3-dev
 install python3-pip
 # install ruby-full
 install tmux
@@ -56,6 +57,8 @@ vim +PlugInstall +qall
 
 # install onehalfdark theme for gnome terminal
 wget https://raw.githubusercontent.com/sonph/onehalf/master/gnome-terminal/onehalfdark.sh
+chmod +x onehalfdark.sh
+sh onehalfdark.sh
 
 # ruby, jekyll and etc
 # echo '# install Ruby Gems to ~/gems' >> ~/.zshrc
