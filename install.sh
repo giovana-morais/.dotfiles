@@ -3,13 +3,6 @@
 echo "your email for git: "
 read git_config_user_email
 
-# install essentials
-sudo apt-get update
-sudo apt-get install -y \
-	build-essential ffmpeg git latexmk neovim tmux \
-	python3-pip zathura zsh libssl-dev \
-	texlive-full \
-
 # reduce overheating
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-get update
@@ -47,6 +40,8 @@ vim +PlugInstall +qall
 
 # install onehalfdark theme for gnome terminal
 wget https://raw.githubusercontent.com/sonph/onehalf/master/gnome-terminal/onehalfdark.sh
+chmod +x onehalfdark.sh
+sh onehalfdark.sh
 
 # ruby, jekyll and etc
 # echo '# install Ruby Gems to ~/gems' >> ~/.zshrc
