@@ -1,37 +1,28 @@
 #!/bin/sh
 
-sudo apt update
+echo "your email for git: "
+read git_config_user_email
 
-install() {
-	which $1 &> /dev/null
-
-	if [ $? -ne 0 ]; then
-		echo "installing ${1}"
-		sudo apt install -y $1
-	else
-		echo "$1 already installed"
-	fi
-}
-
-install build-essential
-install ffmpeg
-install latexmk
-install neovim
-install python3-pip
-# install ruby-full
-install tmux
-install zathura
-install zsh
+# install essentials
+sudo apt-get update
+sudo apt-get install -y \
+	build-essential ffmpeg git latexmk neovim tmux \
+	python3-pip zathura zsh libssl-dev \
+	texlive-full \
 
 # reduce overheating
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-get update
-sudo apt-get install tlp tlp-rdw
+sudo apt-get install -y tlp tlp-rdw
+
+# configure git
+git config --global user.email $git_config_user_email
 
 chsh -s /bin/zsh
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo "zsh" >> ~/.bashrc
 
 # install fzf (click yes to enable fzf-tmux and shell shortcuts)
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -64,3 +55,6 @@ wget https://raw.githubusercontent.com/sonph/onehalf/master/gnome-terminal/oneha
 # source ~/.zshrc
 
 # sudo gem install jekyll bundler
+
+# git configs
+git config --global init.defaultBranch main

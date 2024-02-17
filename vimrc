@@ -84,6 +84,7 @@ let g:vimtex_view_method = 'zathura'
 let g:vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
 let g:vimtex_toc_enabled = 1
 let g:vimtex_fold_enabled = 1
+" let g:livepreview_engine .= ' -shell-escape'
 
 " ================ Goyo ====================
 let g:goyo_width = 90
