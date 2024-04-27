@@ -80,6 +80,6 @@ let g:vimtex_fold_enabled = 1
 " let g:livepreview_engine .= ' -shell-escape'
 
 " ================ Goyo ====================
-let g:goyo_width = 90
+let g:goyo_width = 100
 " ,g toggles Goyo
 map <leader>g :Goyo \| set linebreak<CR>
