@@ -10,6 +10,7 @@ let mapleader =","
 
 " plugins
 call plug#begin('~/.vim/plugged')
+	Plug 'godlygeek/tabular'
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/goyo.vim'
@@ -48,13 +49,13 @@ autocmd BufWritePre *.[ch] %s/\%$/\r/e
 " default 4 spaces per tab
 set sw=4 ts=4 ai
 
-" c files
-autocmd FileType c set sw=8 ts=8 ai
+" HTML, CSS, JS files
+autocmd FileType html 	set sw=2 ts=2 ai
+autocmd FileType css	set sw=2 ts=2 ai
+autocmd FileType js	 	set sw=2 ts=2 ai
 
-" treat all .md files as markdown
-autocmd BufNewFile,BufRead *.md set filetype=markdown
-" format markdown elements
-autocmd FileType markdown set conceallevel=2
+" c files
+autocmd FileType c 		set sw=8 ts=8 ai
 
 " ============ vim-airline ==============
 let g:airline_theme='onehalfdark'
