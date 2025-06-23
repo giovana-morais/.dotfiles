@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/goyo.vim'
 	Plug 'lervag/vimtex'
 	Plug 'preservim/nerdtree'
+	Plug 'shaoran/vim-ruff'
 	Plug 'sonph/onehalf', { 'rtp': 'vim' }
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-surround'
