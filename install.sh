@@ -21,28 +21,6 @@ echo "zsh" >> ~/.bashrc
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
-# create simlinks
-ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
-ln -sf ~/.dotfiles/jupyter ~/.jupyter
-ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
-ln -sf ~/.dotfiles/vim ~/.vim
-ln -sf ~/.dotfiles/vimrc ~/.vimrc
-ln -sf ~/.dotfiles/zshrc ~/.zshrc
-ln -sf ~/.dotfiles/nvim_init ~/.config/init.vim
-
-## vim
-# install vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# install plugins from .vimrc using command line
-vim +PlugInstall +qall
-
-# install onehalfdark theme for gnome terminal
-wget https://raw.githubusercontent.com/sonph/onehalf/master/gnome-terminal/onehalfdark.sh
-chmod +x onehalfdark.sh
-sh onehalfdark.sh
-
 # ruby, jekyll and etc
 # echo '# install Ruby Gems to ~/gems' >> ~/.zshrc
 # echo 'export GEM_HOME="$HOME/gems"' >> ~/.zshrc
