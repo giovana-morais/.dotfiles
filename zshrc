@@ -101,4 +101,4 @@ export PATH="$PYENV_ROOT:$PATH"
 eval "$(pyenv init - zsh)"
 
 export MACHINE="$(uname -n)"
-export DATA_HOME="$HOME/datasets"
+export DATA_HOME="$HOME/Documents/datasets"

@@ -1,4 +1,4 @@
-" enable true colors
+" " enable true colors
 if exists('+termguicolors')
 	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/goyo.vim'
 	Plug 'lervag/vimtex'
 	Plug 'preservim/nerdtree'
+	Plug 'projekt0n/github-nvim-theme'
 	Plug 'shaoran/vim-ruff'
 	Plug 'sonph/onehalf', { 'rtp': 'vim' }
 	Plug 'tpope/vim-commentary'
@@ -27,6 +28,7 @@ call plug#end()
 "" basic settings
 syntax enable
 set t_Co=256
+" colorscheme koehler
 colorscheme onehalfdark
 
 set encoding=utf-8
