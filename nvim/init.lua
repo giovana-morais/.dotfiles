@@ -1,4 +1,5 @@
-require("gigibs.remap")
-require("gigibs.lazy")
-
-print("hello")
+require('options')
+require('keymaps')
+require('plugins')
+require('colorscheme')
+require('lsp')
